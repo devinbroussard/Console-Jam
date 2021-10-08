@@ -30,7 +30,7 @@ namespace Console_Jam
         {
             _position.X = Position.X + 1;
         }
-
+        
         public virtual void Draw() 
         {
             Console.SetCursorPosition((int)Position.X, (int)Position.Y);
