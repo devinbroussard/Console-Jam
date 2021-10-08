@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Math_For_Games
+namespace Console_Jam
 {
     class Program
     {
