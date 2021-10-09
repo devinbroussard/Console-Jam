@@ -32,6 +32,8 @@ namespace Console_Jam
         private static int _currentSceneIndex;
         private Scene[] _scenes = new Scene[0];
         private Actor _actor;
+        private Player _player;
+        private string _playerName;
 
         /// <summary>
         /// Called to begin the application
@@ -57,7 +59,7 @@ namespace Console_Jam
         /// </summary>
         private void Start()
         {
-            _scenes[_currentSceneIndex].Start();
+            
             _actor = new Actor('p', new Math_Library.Vector2 { X = 0, Y = 0 });
         }
 

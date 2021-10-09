@@ -7,21 +7,21 @@ namespace Console_Jam
 {
     class Entity : Actor
     {
-        private float _health;
+        protected float _health;
         private float _attackPower;
         private float _defensePower;
         
-        public float Health
+        public virtual float Health
         {
             get { return _health; }
         }
 
-        public float AttackPower
+        public virtual float AttackPower
         {
             get { return _attackPower; }
         }
 
-        public float DefensePower
+        public virtual float DefensePower
         {
             get { return _defensePower; }
         }
