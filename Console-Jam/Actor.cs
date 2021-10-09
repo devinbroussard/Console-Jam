@@ -11,6 +11,11 @@ namespace Console_Jam
         private string _name;
         private Vector2 _position;
 
+        public string Name
+        {
+            get { return _name; }
+        }
+
         public Vector2 Position
         {
             get { return _position; }
@@ -37,6 +42,9 @@ namespace Console_Jam
             Console.Write(_icon);
         }
 
-        public void End() { }
+        public void End() 
+        {
+            
+        }
     }
 }
