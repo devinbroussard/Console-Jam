@@ -4,6 +4,13 @@ using System.Text;
 
 namespace Console_Jam
 {
+    public struct Item
+    {
+        public string Name;
+        public float StatBoost;
+        public int Durability;
+    }
+
     class Engine
     {
         private static bool _applicationShouldClose = false;
