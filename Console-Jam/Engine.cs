@@ -14,6 +14,7 @@ namespace Console_Jam
     public enum ItemID
     {
         BUN_SHIELD,
+        CARROT_LANCE,
         COUNT
     }
 
@@ -34,6 +35,7 @@ namespace Console_Jam
         private Actor _actor;
         private Player _player;
         private string _playerName;
+        private Item[] _itemList;
 
         /// <summary>
         /// Called to begin the application
@@ -59,17 +61,30 @@ namespace Console_Jam
         /// </summary>
         private void Start()
         {
-            
+            InitializeItems();
+            InitializeEnemies();
             _actor = new Actor('p', new Math_Library.Vector2 { X = 0, Y = 0 });
         }
 
         /// <summary>
-        ///  Initializes the items in the game.
+        /// Creates all of the items in the game, as well as the lists they are apart of.
         /// </summary>
         private void InitializeItems()
         {
-            Item bunShield = new Item { Name = "BunShield", ItemType = BoostType.DEFENSE, StatBoost = 7.5f, Durability = 20,
-            ItemID = ItemID.BUN_SHIELD };
+            Item bunShield = new Item { Name = "Bun Shield", ItemID = ItemID.BUN_SHIELD, ItemType = BoostType.DEFENSE, 
+                Durability = 20, StatBoost = 7.5f };
+            Item carrotLance = new Item { Name = "Carrot Lance", ItemID = ItemID.CARROT_LANCE, ItemType = BoostType.ATTACK,
+                Durability = 35, StatBoost = 13f };
+
+            _itemList = new Item[] { bunShield, carrotLance };
+        }
+
+        /// <summary>
+        /// Initializes the enemies of the game, giving them their stats.
+        /// </summary>
+        private void InitializeEnemies()
+        {
+            Entity burgdude = new Entity(15, 12, 10, 'b', new Math_Library.Vector2 { X = 0, Y = 0 }, "Burgdude");
         }
 
         /// <summary>

@@ -10,6 +10,7 @@ namespace Console_Jam
         protected float _health;
         private float _attackPower;
         private float _defensePower;
+        private Item[] _droppedItems;
         
         public virtual float Health
         {
@@ -32,6 +33,15 @@ namespace Console_Jam
             _health = health;
             _attackPower = attackPower;
             _defensePower = defensePower;
+        }
+
+        public Entity(float health, float attackPower, float defensePower, char icon, Vector2 position, Item[] droppedItems, string name)
+            : base(icon, position, name)
+        {
+            _health = health;
+            _attackPower = attackPower;
+            _defensePower = defensePower;
+            _droppedItems = droppedItems;
         }
 
         /// <summary>
