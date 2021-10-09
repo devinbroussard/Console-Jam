@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace Console_Jam
 {
@@ -10,18 +11,32 @@ namespace Console_Jam
         private static int _currentSceneIndex;
         private Scene[] _scenes = new Scene[0];
         private Actor _actor;
+        private Animation _animation;
 
         /// <summary>
         /// Called to begin the application
         /// </summary>
         public void Run()
         {
+
+
+            //ADDED FOR TESTING
+            _animation = new Animation();
+            _animation.IceCream();
+            _animation.Burger();
+            _animation.Fry();
+            
+            Thread.Sleep(5000);
+            //ADDED FOR TESTING
+
+
             //Call start for the entire application
             Start();
 
             //Loops until the application is told to close
             while (!_applicationShouldClose)
             {
+                
                 Update();
                 Draw();
             }
