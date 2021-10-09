@@ -18,23 +18,6 @@ namespace Console_Jam
         /// </summary>
         public void Run()
         {
-
-            for (int i = 0; i < 20; i++)
-            {
-                //ADDED FOR TESTING
-                _animation = new Animation();
-                _animation.IceCream();
-                _animation.Pasta();
-                _animation.Pizza();
-                _animation.Burger();
-                _animation.Fry();
-            }
-            
-            
-            Thread.Sleep(5000);
-            //ADDED FOR TESTING
-
-
             //Call start for the entire application
             Start();
 
