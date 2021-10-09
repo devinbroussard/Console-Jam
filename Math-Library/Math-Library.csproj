@@ -2,7 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Math_Library</RootNamespace>
+    <RootNamespace>Console_Jam</RootNamespace>
+    <AssemblyName>Console_Jam</AssemblyName>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
 
 </Project>

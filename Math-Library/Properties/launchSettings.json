@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Math-Library": {
+      "commandName": "Project"
+    },
+    "Console_Jam": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\Devin\\Desktop\\Dev\\Console-Jam"
+    }
+  }
+}

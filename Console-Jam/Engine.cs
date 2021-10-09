@@ -30,6 +30,12 @@ namespace Console_Jam
             End();
         }
 
+        private void Awake()
+        {
+
+        }
+
+
         /// <summary>
         /// Called when the application starts
         /// </summary>

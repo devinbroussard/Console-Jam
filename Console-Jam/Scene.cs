@@ -7,10 +7,9 @@ namespace Console_Jam
     class Scene
     {
         public Scene() { }
-        public void Start() { }
-        public void Update() { }
-        public void Draw() { }
-        public void End() { }
-
+        public virtual void Start() { }
+        public virtual void Update() { }
+        public virtual void Draw() { }
+        public virtual void End() { }
     }
 }
