@@ -52,6 +52,24 @@ namespace Console_Jam
             _equippedItems = new Item[2];
         }
 
+        public void MakeWeapon()
+        {
+            Random rnd = new Random();
+            int num = rnd.Next(1, 101);
+
+            if (num > 0 && num < 31)
+                TryEquipItem(0);
+            else if (num > 30 && num < 56)
+                TryEquipItem(1);
+            else if (num > 55 && num < 76)
+                TryEquipItem(2);
+            else if (num > 75 && num < 91)
+                TryEquipItem(3);
+            else if (num > 90 && num < 101)
+                TryEquipItem(4);
+            
+        }
+
         /// <summary>
         /// Attempts to equip an item of an index given to us by the user.
         /// </summary>
@@ -130,7 +148,7 @@ namespace Console_Jam
             Console.Clear();
 
             // If the item's durability is zero, or below zero...
-            if (equippedItem.Durability >= 0)
+            if (equippedItem.Durability <= 0)
             {
                 // ...break the item.
                 BreakItem(equippedItem);
