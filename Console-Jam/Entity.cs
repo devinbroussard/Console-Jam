@@ -26,9 +26,12 @@ namespace Console_Jam
             get { return _defensePower; }
         }
 
-        public Entity(char icon, Vector2 position, string name) : base(icon, position, name)
+        public Entity(float health, float attackPower, float defensePower, char icon, Vector2 position, string name) 
+            : base(icon, position, name)
         {
-
+            _health = health;
+            _attackPower = attackPower;
+            _defensePower = defensePower;
         }
 
         /// <summary>
