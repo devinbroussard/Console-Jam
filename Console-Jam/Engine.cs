@@ -15,7 +15,8 @@ namespace Console_Jam
     public enum ItemID
     {
         BUN_SHIELD,
-        CARROT_LANCE,
+        FRY_NUNCHUCKS,
+        CRUST_LANCE,
         COUNT
     }
 
@@ -76,10 +77,19 @@ namespace Console_Jam
         {
             Item bunShield = new Item { Name = "Bun Shield", ItemID = ItemID.BUN_SHIELD, ItemType = BoostType.DEFENSE, 
                 Durability = 20, StatBoost = 7.5f };
-            Item carrotLance = new Item { Name = "Carrot Lance", ItemID = ItemID.CARROT_LANCE, ItemType = BoostType.ATTACK,
+            Item fryNunchucks = new Item
+            {
+                Name = "Fry Nunchucks",
+                ItemID = ItemID.FRY_NUNCHUCKS,
+                ItemType = BoostType.ATTACK,
+                Durability = 20,
+                StatBoost = 7.5f
+            };
+            Item crustLance = new Item { Name = "Crust Lance", ItemID = ItemID.CRUST_LANCE, ItemType = BoostType.ATTACK,
                 Durability = 35, StatBoost = 13f };
 
-            _itemList = new Item[] { bunShield, carrotLance };
+
+            _itemList = new Item[] { bunShield, crustLance };
         }
 
         /// <summary>
