@@ -85,38 +85,6 @@ namespace Console_Jam
                 // ...it is set to the second index of equipped items.
                 _equippedItems[1] = _currentItem;
             }
-            // If the item boosts health...
-            else
-            {
-                // ...add the stat boost of the item to the player's health...
-                _health += _inventory[_currentItemIndex].StatBoost;
-                Console.WriteLine("You recovered " + _currentItem.StatBoost + " health!");
-                Console.ReadKey(true);
-                Console.Clear();
-
-                Item[] newInventory = new Item[_inventory.Length - 1];
-
-                int j = 0;
-
-                bool itemRemoved = false;
-
-                // ...and remove the item from the inventory.
-                for (int i = 0; i < _inventory.Length; i++)
-                {
-                    if (_inventory[i].ItemID != _currentItem.ItemID || itemRemoved)
-                    {
-                        newInventory[j] = _inventory[i];
-                        j++;
-                    }
-                    else
-                    {
-                        itemRemoved = true;
-                    }
-                }
-
-                // Sets the old inventory equal to the new one.
-                _inventory = newInventory;
-            }
 
             return true;
         }
@@ -143,6 +111,81 @@ namespace Console_Jam
             _equippedItems[1].Name = "Nothing";
 
             return true;
+        }
+
+        /// <summary>
+        /// Allows the player to eat the weapon they currently have equipped in order to regain health, but it heavily decrements
+        /// the item's durability.
+        /// </summary>
+        /// <param name="equippedItem"> The equipped item chosen to be eaten. </param>
+        public void EatWeapon(Item equippedItem)
+        {
+            // Decrements the equippedItem's durability.
+            equippedItem.Durability -= 10;
+
+            // Adds the stat boost of the item to the player's health.
+            _health += equippedItem.StatBoost;
+            Console.WriteLine("You recovered " + _currentItem.StatBoost + " health!");
+            Console.ReadKey(true);
+            Console.Clear();
+
+            // If the item's durability is zero, or below zero...
+            if (equippedItem.Durability >= 0)
+            {
+                // ...break the item.
+                BreakItem(equippedItem);
+            }
+        }
+
+        /// <summary>
+        /// Removes the chosen item from the player's inventory and removes it from their equipped items.
+        /// </summary>
+        /// <param name="equippedItem"> The equipped item being removed. </param>
+        public void BreakItem(Item equippedItem)
+        {
+            // Creates a new list for the player's inventory.
+            Item[] newInventory = new Item[_inventory.Length - 1];
+
+            int j = 0;
+
+            bool itemRemoved = false;
+
+            // Removes the item from the player's inventory.
+            for (int i = 0; i < _inventory.Length; i++)
+            {
+                // If the current item's ID is not the same as the equipped item's ID, or an item of the same type has been 
+                // removed before...
+                if (_inventory[i].ItemID != equippedItem.ItemID || itemRemoved)
+                {
+                    // ...it sets the current item in inventory to the current item in the newInventory.
+                    newInventory[j] = _inventory[i];
+                    j++;
+                }
+                // If the ID's match and an item of the same type has not been removed before.
+                else
+                {
+                    // ...it sets itemRemoved to true. And keeps the item from being added to the newInventory.
+                    itemRemoved = true;
+                }
+            }
+
+            // Sets the old inventory equal to the new one.
+            _inventory = newInventory;
+
+            // Removes the item from the player's equipped items.
+            for(int i = 0; i < _equippedItems.Length; i++)
+            {
+                if (_equippedItems[i].ItemID == equippedItem.ItemID)
+                {
+                    _equippedItems[i] = new Item();
+                    _equippedItems[i].Name = "Nothing";
+                }
+            }
+
+            // Lets the player know the item broke.
+            Console.WriteLine(equippedItem.Name + " broke!");
+            Console.ReadKey(true);
+            Console.Clear();
         }
     }
 }
