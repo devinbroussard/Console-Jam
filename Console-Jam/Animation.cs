@@ -6,5 +6,6 @@ namespace Math_For_Games
 {
     class Animation
     {
+
     }
 }
