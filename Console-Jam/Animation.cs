@@ -45,8 +45,9 @@ namespace Console_Jam
                     Console.Write("    ████████████████████████████        ");
                     Console.SetCursorPosition(60, j + 14);
                     Console.WriteLine("                                    ");
+                    Console.SetCursorPosition(0, 0);
 
-                    Thread.Sleep(500);
+                    Thread.Sleep(300);
                 }
             }
             
@@ -94,8 +95,9 @@ namespace Console_Jam
                     Console.Write("       ░░░░▒▒░░░░░░░░▒▒░░▒▒         ");
                     Console.SetCursorPosition(60, j + 16);
                     Console.WriteLine("                                   ");
+                    Console.SetCursorPosition(0, 0);
 
-                    Thread.Sleep(500);
+                    Thread.Sleep(300);
                 }
             }
         }
@@ -158,9 +160,12 @@ namespace Console_Jam
                     Console.Write("               ████                 ");
                     Console.SetCursorPosition(60, j + 19);
                     Console.Write("               ░░░░                ");
+                    Console.SetCursorPosition(60, j + 20);
+                    Console.WriteLine("                               ");
+                    Console.SetCursorPosition(0, 0);
 
 
-                    Thread.Sleep(500);
+                    Thread.Sleep(300);
                 }
             }
 
@@ -226,9 +231,10 @@ namespace Console_Jam
                     Console.Write("              ░░░░░░░░░░░░░░░░░░               ");
                     Console.SetCursorPosition(60, j + 19);
                     Console.Write("                                               ");
+                    Console.SetCursorPosition(0, 0);
 
 
-                    Thread.Sleep(500);
+                    Thread.Sleep(300);
                 }
             }
 
@@ -293,9 +299,10 @@ namespace Console_Jam
                     Console.Write("          ████████████████████████████████           ");
                     Console.SetCursorPosition(60, j + 19);
                     Console.Write("                                               ");
+                    Console.SetCursorPosition(0, 0);
 
 
-                    Thread.Sleep(500);
+                    Thread.Sleep(300);
                 }
             }
 
