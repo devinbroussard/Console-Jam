@@ -11,5 +11,6 @@ namespace Console_Jam
         public void Update() { }
         public void Draw() { }
         public void End() { }
+
     }
 }
