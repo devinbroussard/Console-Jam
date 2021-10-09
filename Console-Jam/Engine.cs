@@ -23,6 +23,8 @@ namespace Console_Jam
             //ADDED FOR TESTING
             _animation = new Animation();
             _animation.IceCream();
+            _animation.Pasta();
+            _animation.Pizza();
             _animation.Burger();
             _animation.Fry();
             
