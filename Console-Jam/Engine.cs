@@ -61,6 +61,9 @@ namespace Console_Jam
             _actor = new Actor('p', new Math_Library.Vector2 { X = 0, Y = 0 });
         }
 
+        /// <summary>
+        ///  Initializes the items in the game.
+        /// </summary>
         private void InitializeItems()
         {
             Item bunShield = new Item { Name = "BunShield", ItemType = BoostType.DEFENSE, StatBoost = 7.5f, Durability = 20,
