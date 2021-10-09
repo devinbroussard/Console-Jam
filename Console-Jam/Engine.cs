@@ -4,6 +4,28 @@ using System.Text;
 
 namespace Console_Jam
 {
+    public enum BoostType
+    {
+        ATTACK,
+        DEFENSE,
+        HEALTH,
+        NONE
+    }
+
+    public enum ItemID
+    {
+        COUNT
+    }
+
+    public struct Item
+    {
+        public string Name;
+        public float StatBoost;
+        public int Durability;
+        public BoostType ItemType;
+        public ItemID ItemID;
+    }
+
     class Engine
     {
         private static bool _applicationShouldClose = false;
