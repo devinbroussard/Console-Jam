@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace Console_Jam
 {
@@ -33,6 +34,7 @@ namespace Console_Jam
         private static int _currentSceneIndex;
         private Scene[] _scenes = new Scene[0];
         private Actor _actor;
+        private Animation _animation;
         private Player _player;
         private string _playerName;
         private Item[] _itemList;
@@ -48,6 +50,7 @@ namespace Console_Jam
             //Loops until the application is told to close
             while (!_applicationShouldClose)
             {
+                
                 Update();
                 Draw();
             }
